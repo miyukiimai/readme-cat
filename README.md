@@ -16,9 +16,12 @@ https://gyazo.com/74be6d06c90c9c0971143e269e29415f
 会員情報入力画面では猫を譲渡する側が最初から欲しい情報を入力必須にしました。身分証を入力必須にして里親詐欺や虐待防止に繋げます。
 新規猫情報入力画面では猫の細かい情報を入力するように、例文を入力しました。
 # 実装予定の内容
-猫の投稿サイドと里親サイドの希望の猫がおすすめに出てくるように実装する予定です。
+ユーザーの希望の猫がおすすめに出てくるように実装する予定です。
+また猫を投稿する側にもお勧めのユーザーが出てくるようにします。
+お互いのニーズにマッチした猫を安全に譲渡するお手伝いをします。
+身分証は猫を譲渡する側には必要な情報なので、どのように安全に情報を開示するかが課題です。
 # DB設計
-## users テーブル
+### users テーブル
 
 | Column                 | Type   | Options                   |
 | ------------------     | ------ | ------------------------- |
@@ -37,15 +40,15 @@ https://gyazo.com/74be6d06c90c9c0971143e269e29415f
 | raise_environment      | string | null: false               |
 | birthday               | date   | null: false               |
 
-## adopt テーブル
+### adopt テーブル
 
-| Column               | Type       | Options                        |
-| ------               | ------     | ------------                   |
-| cat_title            | string     | null: false                    |
-| cat_description      | text       | null: false                    |
-| sex                  | integer    | null: false                    |
-| age                  | integer    | null: false                    |
-| operation            | integer    | null: false                    |
-| prefecture           | integer    | null: false                    |
-| apply_reason         | integer    | null: false                    |
+| Column               | Type       | Options                 |
+| ------               | ------     | ------------            |
+| cat_title            | string     | null: false             |
+| cat_description      | text       | null: false             |
+| sex                  | integer    | null: false             |
+| age                  | integer    | null: false             |
+| operation            | integer    | null: false             |
+| prefecture           | integer    | null: false             |
+| apply_reason         | integer    | null: false             |
 
