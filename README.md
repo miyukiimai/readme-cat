@@ -3,7 +3,7 @@ catマッチングアプリ
 # 概要
 保護猫の里親サイト　人間と猫のマッチングアプリケーション
 # 制作背景（意図）
-保護猫活動をしていて、猫を譲渡する際に既存の里親サイトを使用していたが、既存の里親サイトが不十分な項目が多く里親詐欺や虐待から猫を守るため、充実したアプリがあったらいいなという思いから作成しました
+保護猫活動をしていて、猫を譲渡する際に既存の里親サイトを使用していましたが、既存の里親サイトが不十分な項目が多く里親詐欺や虐待から猫を守るため、充実したアプリがあったらいいなという思いから作成しました
 # DEMO
 ### トップページ
 https://gyazo.com/97a6370ed3388d0eab82ac9d13255b75
@@ -18,3 +18,34 @@ https://gyazo.com/74be6d06c90c9c0971143e269e29415f
 # 実装予定の内容
 猫の投稿サイドと里親サイドの希望の猫がおすすめに出てくるように実装する予定です。
 # DB設計
+## users テーブル
+
+| Column                 | Type   | Options                   |
+| ------------------     | ------ | ------------------------- |
+| nickname               | string | null: false               |
+| email                  | string | null: false, unique: true | 
+| encrypted_password     | string | null: false               |
+| last_name              | string | null: false               |
+| first_name             | string | null: false               |
+| last_name_kana         | string | null: false               |
+| first_name_kana        | string | null: false               |
+| family_structure       | string | null: false               |  
+| raise_experience       | string | null: false               |
+| ID                     | string | null: false               |
+| picture_house          | string | null: false               |
+| SNS_account            | string | null: false               |
+| raise_environment      | string | null: false               |
+| birthday               | date   | null: false               |
+
+## adopt テーブル
+
+| Column               | Type       | Options                        |
+| ------               | ------     | ------------                   |
+| cat_title            | string     | null: false                    |
+| cat_description      | text       | null: false                    |
+| sex                  | integer    | null: false                    |
+| age                  | integer    | null: false                    |
+| operation            | integer    | null: false                    |
+| prefecture           | integer    | null: false                    |
+| apply_reason         | integer    | null: false                    |
+
